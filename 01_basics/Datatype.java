@@ -12,10 +12,13 @@ class Datatype {
         z = 'd';
         a = true;
 
-        // priting
+        // printing
         System.out.println("Int: " + x);
         System.out.println("Double: " + y);
         System.out.println("Character: " + z);
         System.out.println("Boolean: " + a);
     }    
 }
+
+// using variable without initialization -------> error
+// declaration of variables              -------> no-error
