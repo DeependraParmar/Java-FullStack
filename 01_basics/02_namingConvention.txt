@@ -1,0 +1,4 @@
+1. Class / Interface --------> Capital Case eg. Demo, DemoProgram
+2. methods           --------> Camel-Case Convention eg. showName(), showDetails()
+3. variables         --------> lowercase / Camel-Case
+4. constant          --------> Uppercase like PI, etc
