@@ -1,4 +1,0 @@
-Before going to platform-independency, first we need to know what is platform-dependency.
-
-In case of C/C++: Source Code -> compiler(OS) -> .exe () : due to the OS specific code, the executable becomes platform dependent.
-

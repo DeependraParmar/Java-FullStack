@@ -1,0 +1,16 @@
+Before going to platform-independency, first we need to know what is platform-dependency.
+
+In case of C/C++: Source Code -> compiler(OS) -> .exe () : due to the OS specific code, the executable becomes platform dependent.
+
+Now, let's talk about platform-independency in java.
+In Java:    
+Step 01: Source Code(.java) ---> Compiler ---> Byte code(intermediate code ie .class. The main advantage of this type of code is that the environment of java knows that, this is my code. It is done by JVM. Something which is not real but works like its is real )
+Step 02: Byte code ---> JRE(OS) ----> executable code(run)
+
+
+Question to ask: Which code is platform-dependent ?      -----------> Executable code
+Question to ask: Which code is platform-independent ?    -----------> Byte code
+
+
+
+JVM: Java Virtual Machine (platform-dependent software, which is different for MacOS, Windows, Linux, etc).
