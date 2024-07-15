@@ -1,1 +1,3 @@
-*/.class
+# preventing all .class files from being pushed to the repository
+
+*.class
