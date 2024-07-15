@@ -17,3 +17,5 @@ class Test2{}
 
 // If I have multiple classes in a particular source file, multiple bytecodes are generated for them.
 // But, Byte code which has the main function gets executed.
+
+// Due to this fact, java's execution is slow as compared to c/cpp. In order to increase the execution, JIT (just in time present in JRE) compiles only the classes with significant code.

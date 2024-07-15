@@ -1,4 +1,4 @@
-# 🌟 Java Full Stack Development Repository 🌟
+# 🌟 Java Full Stack Development 🌟
 
 Welcome to the Java Full Stack Development repository! This repository is your one-stop-shop for learning and mastering full stack development using Java. Whether you are a beginner or an experienced developer, you'll find valuable resources here to enhance your skills.
 
