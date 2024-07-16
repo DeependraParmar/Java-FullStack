@@ -5,4 +5,11 @@ OOPS: Object Oriented Programming and in this, the code/project is divided into 
 ______________________________
 
 Class: Class is the structure where we define the objects. Class is more technically used to define objects in the form of its features(data) and behavior(methods/functions).
-Objects: Objects are something which exists and you can deal with it.
+Objects: Objects are something which exists and you can deal with it. Objects are more technically is an instance of a class.
+
+Firstly, procedure wise, we create class but ultimately, we do need an imaginary object (an image) which is going to be defined in the class.
+
+_______________________________
+
+Encapsulation: Wrapping data and functions into a single unit (object, which can be used to access the data-features and functions/methods/behavior.). In order to achieve encapsulation, we define a class.
+
