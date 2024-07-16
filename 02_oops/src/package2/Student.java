@@ -20,7 +20,7 @@ public class Student {
         this.name = sc.next();
         System.out.println("Enter the marks of the 5 subjects: ");
 
-        for(int i=0; i<5; i++){
+        for(int i=0; i<this.marks.length; i++){
             System.out.print("Marks of subject " + (i+1) + ": ");
             this.marks[i] = sc.nextFloat();
         }
@@ -31,9 +31,11 @@ public class Student {
         System.out.println("Roll No: " + this.roll);
         System.out.println("Name: " + this.name);
         System.out.print("Marks: [");
-        for(int i=0; i<5; i++){
-            System.out.print(marks[i] + ",");
+
+        for (float mark : this.marks) {
+            System.out.print(mark + ",");
         }
+
         System.out.print("]");
     }
 }
