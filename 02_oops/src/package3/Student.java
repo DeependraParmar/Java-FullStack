@@ -7,12 +7,22 @@ public class Student {
     private String name;
     private float marks;
 
+    // default constructor
     public Student(){}
+
+    // parameterized constructor
     public Student(int roll, String name, float marks){
         super();
         this.roll = roll;
         this.name = name;
         this.marks = marks;
+    }
+
+    // copy constructor
+    public Student(Student student){
+        this.roll = student.roll;
+        this.name = student.name;
+        this.marks = student.marks;
     }
 
     public void input(){
