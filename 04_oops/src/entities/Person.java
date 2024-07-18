@@ -21,6 +21,5 @@ public class Person{
         System.out.println("Name is: " + this.name);
         System.out.println("Age is: " + this.age);
         System.out.println("Phone number is: " + this.phone);
-        System.out.println();
     }
 }
