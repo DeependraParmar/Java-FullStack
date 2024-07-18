@@ -40,10 +40,10 @@ public class Person{
 
     public void canVote(){
         if(this.age >= 18){
-            System.out.println("You are eligible to Vote");
+            System.out.println("*** You are eligible to Vote ***");
         }
         else{
-            System.out.println("You are not eligible to Vote");
+            System.out.println("*** You are not eligible to Vote ***");
         }
     }
 }
