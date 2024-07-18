@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Scanner;
+
 public class Student extends Person{
     private int roll_no;
     private float marks;
@@ -17,6 +19,16 @@ public class Student extends Person{
         super(name, age, phone);
         this.roll_no = roll_no;
         this.marks = marks;
+    }
+
+    public void input(){
+        super.input();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter you roll no: ");
+        this.roll_no = sc.nextInt();
+
+        System.out.print("Enter your marks: ");
+        this.marks = sc.nextFloat();
     }
 
     @Override
