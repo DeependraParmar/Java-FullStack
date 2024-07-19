@@ -1,12 +1,7 @@
-# preventing all .class files from being pushed to the repository
-
-*.class
-
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-*/.idea
 
 ### Eclipse ###
 .apt_generated
