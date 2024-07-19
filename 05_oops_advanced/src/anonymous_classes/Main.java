@@ -2,6 +2,7 @@ package anonymous_classes;
 
 public class Main {
     public static void main(String[] args) {
+        // Anonymous class created inheriting / extending Sample
         Sample s1 = new Sample() {
             @Override
             void hello() {
