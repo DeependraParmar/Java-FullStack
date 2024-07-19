@@ -17,4 +17,6 @@ public class Main {
 // 1. It cannot be instantiated due to incomplete functionality.
 // 2. It is compulsory for every child class to override the abstract method of
 //    abstract class.
-// 2. You can only extend one abstract class.
+// 3. You can only extend one abstract class.
+// 4. If a subclass don't want to override all the methods of the superclass,
+//    the subclass itself need to be abstract.
