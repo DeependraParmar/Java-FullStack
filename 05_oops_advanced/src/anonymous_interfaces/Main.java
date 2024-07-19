@@ -2,6 +2,7 @@ package anonymous_interfaces;
 
 public class Main {
     public static void main(String[] args) {
+        // Anonymous classes implementing the interface Test
         Test t1 = new Test() {
             @Override
             public void function1() {
