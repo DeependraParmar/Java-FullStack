@@ -14,6 +14,7 @@ public class HashSets {
         *   TreeSet:
         *       1. All same as above
         *       2. Keeps the data sorted in the best possible manner.
+        *       3. NOTE - COMPARABLE OBJECTS are stored in TreeSet
         * */
         HashSet<String> h = new HashSet<String>();
 
