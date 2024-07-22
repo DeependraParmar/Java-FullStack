@@ -11,10 +11,18 @@ public class Student implements Comparable<Student> {
         this.marks = marks;
     }
 
+    public int getRoll_no(){
+        return this.roll_no;
+    }
+
     public void show(){
         System.out.println("Roll no of student is: " + this.roll_no);
         System.out.println("Name of the student is: " + this.name);
         System.out.println("Marks of the student is: " + this.marks);
+    }
+    @Override
+    public String toString(){
+        return this.name;
     }
 
     @Override
