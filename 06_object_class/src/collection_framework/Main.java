@@ -20,6 +20,24 @@ public class Main {
                 3. Insertion order: maintained
                 4. Duplicate elements: allowed
         */
+        /*
+            When will you use ArrayList:
+                1. Retrieval is fast due to contiguous memory locations.
+                2. Due to above one, resizing it again and again leads to change
+                     in the memory behind the scenes lead problems.
+
+                DESPITE, WE'LL USE LINKED LIST and nothing will change.
+        */
+        /*
+            LinkedList:
+                1. Non-contiguous memory allocation.
+                2. Slow due to random allocation.
+                3. LinkedList Implementation: Dynamic memory location
+                4. It can be used as a List and Deque.
+                5. Insertion order - maintained
+                6. Duplicate values - allowed
+        * */
+
         ArrayList<Integer> a1 = new ArrayList<Integer>();
 
         a1.add(10);
