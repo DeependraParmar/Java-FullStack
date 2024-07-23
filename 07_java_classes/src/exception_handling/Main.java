@@ -28,6 +28,9 @@ public class Main {
 
             2. Unchecked Exception: happens due to logical errors and java never forces you to do
                 exception handling.
+
+                Exception is the Super Class. RunTimeException is one child of it and all the subclasses of it
+                gives unchecked exceptions, rest all of them are checked exceptions.
     */
 
     public static void main(String[] args) {
