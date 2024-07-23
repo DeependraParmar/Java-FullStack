@@ -18,5 +18,7 @@ public class Strings {
         // toLowerCase() and toUpperCase() will return new string
 
         System.out.println("Substring is: " + str.substring(24, 33));
+        System.out.println("Replaced String is: " + str.replace("Deependra Parmar", "DEEPENDRA PARMAR"));
+
     }
 }
