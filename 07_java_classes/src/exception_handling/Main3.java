@@ -20,6 +20,7 @@ class Sample{
     }
 
     // These are called as Factory Methods: Creates the Object or produces it.
+    // This is used to implement FACTORY PATTERN
     public static Sample getInstance(){
         return new Sample(0,0);
     }
