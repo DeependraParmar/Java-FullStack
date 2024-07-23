@@ -13,6 +13,21 @@ public class Main {
          Exception Handling:
             1. End User will see a readable message on error
             2. To know that in which module, the exception occurred for further clarity.
+
+
+         Exception are of two types:
+            1. Checked Exception: You do not have any interference/control with these one. Java do enforce you to
+                do exception handling.
+
+                basic: -->     System.in.read(); --------> forces exception handling
+                adv: ---->     try{ System.in.read(); }
+                                catch(IOException ex){}
+
+                throws keyword is used to enforce handling which throw a Checked Exception. It doesn't work for
+                unchecked exception.
+
+            2. Unchecked Exception: happens due to logical errors and java never forces you to do
+                exception handling.
     */
 
     public static void main(String[] args) {
