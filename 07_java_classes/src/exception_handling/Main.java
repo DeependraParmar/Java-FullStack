@@ -37,6 +37,13 @@ public class Main {
 
             System.out.println(e);
         }
+        finally {
+            System.out.println(">> Finally Run <<");
+            // code of finally gets executed everytime.
+            // whenever, the exception cannot be handled, program gets terminated after executing finally.
+            // finally is used in various use cases for eg.
+            // shut the db connection whether exception has occured or not.
+        }
 
         System.out.println();
         System.out.println("*** Thanks for working with me ***");
