@@ -1,6 +1,6 @@
 package threading;
 
-public class Demo {
+public class Demo extends Thread {
     private final String title;
 
     public Demo(String title){
@@ -8,9 +8,14 @@ public class Demo {
         this.title = title;
     }
 
-    public void execute(){
+    private void execute(){
         for (int i = 0; i <= 10; i++) {
             System.out.println(i + " : " + this.title);
         }
+    }
+
+    @Override
+    public void run() {
+        this.execute();
     }
 }

@@ -6,9 +6,13 @@ public class Main {
         Demo d2 = new Demo("Indore");
         Demo d3 = new Demo("Ujjain");
 
-        d1.execute();
-        d2.execute();
-        d3.execute();
+        // Step 01: Inherit Thread class in Demo
+        // Step 02: call start() with object to add threads in process queue
+        // Step 03: Override the run method and write your code in it.
+
+        d1.start();
+        d2.start();
+        d3.start();
     }
 }
 
