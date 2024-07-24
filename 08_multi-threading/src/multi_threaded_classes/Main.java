@@ -13,6 +13,11 @@ public class Main {
 
             Similarly, we have Vector<E> whose methods are synchronized so, it can also
             be used in multithreaded env.
+
+            InterruptedException: For the particular time period, you can sleep it.
+            But, if you want remove it from sleep mode, you can use thread.interrupt()
+
+            and it throws a InterruptedException
         */
     }
 }
