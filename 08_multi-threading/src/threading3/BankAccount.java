@@ -9,23 +9,19 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public void deposit(float amount){
+    public synchronized void deposit(float amount){
         float balance = this.balance;
         this.balance += amount;
 
-        System.out.println("Deposit Successful...");
-        System.out.println("Old Balance:  ₹" + balance);
-        System.out.println("New Balance:  ₹" + this.balance);
+        System.out.println("Deposit Successful..." + " | Amount: " + amount + " | Old Balance:  ₹" + balance + " | New Balance:  ₹" + this.balance);
     }
 
-    public void withdraw(float amount){
+    public synchronized void withdraw(float amount){
         if(this.balance >= amount){
             float balance = this.balance;
             this.balance -= amount;
 
-            System.out.println("Withdraw Successful...");
-            System.out.println("Old Balance:  ₹" + balance);
-            System.out.println("New Balance:  ₹" + this.balance);
+            System.out.println("Withdraw Successful..." + " | Amount: " + amount + " | Old Balance:  ₹" + balance + " | New Balance:  ₹" + this.balance);
         }
         else{
             System.out.println("Insufficient balance! : ₹" + this.balance);
