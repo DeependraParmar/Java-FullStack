@@ -1,6 +1,6 @@
-package threading;
+package threading2;
 
-public class Demo extends Thread {
+public class Demo implements Runnable {
     private final String title;
 
     public Demo(String title){
