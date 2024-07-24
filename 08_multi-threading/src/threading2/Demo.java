@@ -11,6 +11,11 @@ public class Demo implements Runnable {
     private void execute(){
         for (int i = 0; i <= 10; i++) {
             System.out.println(i + " : " + this.title);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
