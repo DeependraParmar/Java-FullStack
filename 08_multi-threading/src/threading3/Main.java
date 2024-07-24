@@ -25,3 +25,4 @@ public class Main {
 // But, Transactions on same object/account should be sequential/single-threaded.
 
 // In order to make operations synchronized: you can make the methods SYNCHRONIZED
+// These SYNCHRONIZED methods can lead to deadlocks and its use should be intelligent.
