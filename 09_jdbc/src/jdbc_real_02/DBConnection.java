@@ -12,8 +12,6 @@ public class DBConnection {
         final String PASSWORD = "root";
 
         Connection connection = DriverManager.getConnection(CONNECTION_URL, ID, PASSWORD);
-        System.out.println("Connected to Database....");
-
         return connection;
     }
 }
