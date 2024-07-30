@@ -10,11 +10,10 @@ public class StudentService {
 
     public ArrayList<Student> listAll() {
         ArrayList<Student> list = new ArrayList<Student>();
-        Connection connection = null;
-        try {
-            connection = DBConnection.getDBConnection();
-            Statement s = connection.createStatement();
 
+        // try with resource for AutoCloseable
+        try(Connection connection = DBConnection.getDBConnection()) {
+            Statement s = connection.createStatement();
             ResultSet rs = s.executeQuery("select * from student");
 
             while(rs.next()){
@@ -33,13 +32,6 @@ public class StudentService {
         catch (SQLException e) {
             System.err.println(e.getMessage());
             return null;
-        }finally {
-            try {
-                assert connection != null;
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
         }
     }
 }
