@@ -23,12 +23,14 @@ public class Main {
             // PRINTING RECORDS: Printing the rows
             while(resultSet.next()){
                 // accessing columns via number of column: Not a great choice
-//                int rollno = resultSet.getInt(1);
-//                String name = resultSet.getString(2);
-//                int age = resultSet.getInt(3);
-//                String email = resultSet.getString(4);
-//                float marks = resultSet.getFloat(5);
+                // int rollno = resultSet.getInt(1);
+                // String name = resultSet.getString(2);
+                // int age = resultSet.getInt(3);
+                // String email = resultSet.getString(4);
+                // float marks = resultSet.getFloat(5);
 
+
+                // Accessing columns via their names in the table: perfect choice
                 int rollno = resultSet.getInt("rollno");
                 String name = resultSet.getString("name");
                 int age = resultSet.getInt("age");
@@ -36,6 +38,9 @@ public class Main {
                 float marks = resultSet.getFloat("marks");
 
                 System.out.println(rollno + " " + name + " " + age + " " + email + " " + marks);
+
+                // CONNECTION TERMINATION: releasing the connection back to MYSQL connection pool
+                connection.close();
             }
         }
         catch(SQLException e){
