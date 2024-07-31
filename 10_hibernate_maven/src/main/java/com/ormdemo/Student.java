@@ -27,6 +27,14 @@ public class Student {
 
     public Student(){}
 
+    public Student(int rollno, String name, int age, String email, float marks) {
+        this.rollno = rollno;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.marks = marks;
+    }
+
     public int getRollno() {
         return rollno;
     }
@@ -67,4 +75,14 @@ public class Student {
         this.marks = marks;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollno=" + rollno +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
 }

@@ -24,5 +24,6 @@
             root
         </property>
 
+        <mapping class="com.ormdemo.Student" />
     </session-factory>
 </hibernate-configuration>

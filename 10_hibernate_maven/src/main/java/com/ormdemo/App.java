@@ -1,9 +1,28 @@
 package com.ormdemo;
 
-public class App 
-{
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class App {
     public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+        Configuration cfg = new Configuration();
+        cfg.configure(); // reading the configuration file (hibernate.cfg.xml)
+
+        try (SessionFactory sessionFactory = cfg.buildSessionFactory()) {
+            Session session = sessionFactory.openSession();
+
+            Student ob = session.get(Student.class, 56);
+            System.out.println(ob);
+
+            Student obj = new Student(33, "Anushka", 20, "anushka21@gmail.com", 7.87f);
+            session.beginTransaction().commit();
+            session.save(obj);
+
+            session.close();
+        }
+
+        System.out.println("Configuration done.....");
     }
 }
 
@@ -30,8 +49,12 @@ public class App
                         you as a developer is using.
             > Mapping: relationship between the table, relation and the objects.
 
-    2. SessionFactory:
-    3. Session:
+    2. SessionFactory: SessionFactory provides the objects of the Session Class.
+           SessionFactory's object is provided by configuration.
+    3. Session: Session class has all the methods for CRUD via Hibernate.
+
+            Configuration ---> SessionFactory ---> Session
+
     4. Query:
     5. Transaction:
     6. Criteria:
