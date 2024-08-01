@@ -10,20 +10,24 @@ public class App
         EmployeeService employeeService = new EmployeeService();
         SessionFactoryBuilder.buildFactory();
 
-        // Adding a new record
+//        Adding a new record
 //        Employee e1 = new Employee(12, "Aditya Paliwal", 20, "adityapaliwal243@gmail.com", null);
 //        employeeService.addEmployee(e1);
 
-        // Getting the record by an id
+//          Getting the record by an id
 //        Employee e = employeeService.getById(3);
 //        System.out.println(e);
 
-        // Getting all the records from the database
+//        Getting all the records from the database
 //        System.out.println(employeeService.getAllEmployee());
 
-        Employee e = employeeService.getById(3);
-        e.setSalary(22.5f);
-        employeeService.updateEmployee(e);
+//        Updating the record or the object
+//        Employee e = employeeService.getById(3);
+//        e.setSalary(22.5f);
+//        employeeService.updateEmployee(e);
+
+//        Deleting the record
+        employeeService.deleteEmployee(35);
 
         SessionFactoryBuilder.closeFactory();
     }

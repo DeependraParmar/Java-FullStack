@@ -75,4 +75,22 @@ public class EmployeeService {
             session.close();
         }
     }
+
+    public void deleteEmployee(Integer id){
+        Session session = null;
+        try {
+            session = SessionFactoryBuilder.getSession();
+            Employee e = session.get(Employee.class, id);
+            session.delete(e);
+            session.beginTransaction().commit();
+            System.out.println("Employee Deleted Successfully ....");
+        }
+        catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        finally {
+            assert session != null;
+            session.close();
+        }
+    }
 }
