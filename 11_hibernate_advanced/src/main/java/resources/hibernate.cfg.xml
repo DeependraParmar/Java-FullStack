@@ -24,6 +24,10 @@
             root
         </property>
 
+        <property name="hibernate.hbm2dll.auto">
+            update
+        </property>
+
         <mapping class="entity.Employee" />
     </session-factory>
 </hibernate-configuration>

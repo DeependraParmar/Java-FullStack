@@ -26,6 +26,6 @@ public class Employee {
     @Column(name = "emp_email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "emp_salary", nullable = true)
+    @Column(name = "emp_salary")
     private float salary;
 }
