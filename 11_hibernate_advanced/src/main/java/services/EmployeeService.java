@@ -59,4 +59,20 @@ public class EmployeeService {
         }
     }
 
+    public void updateEmployee(Employee ob){
+        Session session = null;
+        try {
+            session = SessionFactoryBuilder.getSession();
+            session.update(ob);
+            session.beginTransaction().commit();
+            System.out.println("Employee Updated Successfully ....");
+        }
+        catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        finally {
+            assert session != null;
+            session.close();
+        }
+    }
 }
