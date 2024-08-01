@@ -13,8 +13,10 @@ public class App
 //        Employee e1 = new Employee(12, "Aditya Paliwal", 20, "adityapaliwal243@gmail.com", null);
 //        employeeService.addEmployee(e1);
 
-        Employee e = employeeService.getById(3);
-        System.out.println(e);
+//        Employee e = employeeService.getById(3);
+//        System.out.println(e);
+
+        System.out.println(employeeService.getAllEmployee());
 
         SessionFactoryBuilder.closeFactory();
     }

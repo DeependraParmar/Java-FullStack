@@ -3,8 +3,28 @@ package services;
 import entity.Employee;
 import lib.SessionFactoryBuilder;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class EmployeeService {
+    public List<Employee> getAllEmployee(){
+        Session session = null;
+        try {
+            session = SessionFactoryBuilder.getSession();
+            Query<Employee> query = session.createQuery("from Employee", Employee.class);
+            return query.list();
+        }
+        catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+            return null;
+        }
+        finally {
+            assert session != null;
+            session.close();
+        }
+    }
+
     public void addEmployee(Employee ob){
         Session session = null;
         try {
@@ -38,4 +58,5 @@ public class EmployeeService {
             session.close();
         }
     }
+
 }
