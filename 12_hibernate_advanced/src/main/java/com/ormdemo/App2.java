@@ -14,11 +14,13 @@ public class App2 {
         Department d1 = session.get(Department.class, 3);
 
         // creating the object of employee with relationship with department
-        Employee e1 = new Employee(56, "Deependra Parmar", "deependraparmar1@gmail.com", 22.5f, d1);
+//        Employee e1 = new Employee(56, "Deependra Parmar", "deependraparmar1@gmail.com", 22.5f, d1);
 
-        // saving and commiting the transaction
-        session.save(e1);
-        session.beginTransaction().commit();
+        // saving and commiting the transaction....
+//        session.save(e1);
+//        session.beginTransaction().commit();
+
+        System.out.println(session.get(Employee.class, 56));
 
         SessionFactoryBuilder.closeFactory();
     }
