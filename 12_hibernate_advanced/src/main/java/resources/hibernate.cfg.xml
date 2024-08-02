@@ -29,5 +29,6 @@
         </property>
 
         <mapping class="entity.Department" />
+        <mapping class="entity.Employee" />
     </session-factory>
 </hibernate-configuration>

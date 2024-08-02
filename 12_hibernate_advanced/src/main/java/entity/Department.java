@@ -1,4 +1,4 @@
-package entities;
+package entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Department {
     @Id
     @Column(name = "dep_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "dep_name", unique = true, nullable = false)
