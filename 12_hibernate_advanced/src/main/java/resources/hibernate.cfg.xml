@@ -28,6 +28,6 @@
             update
         </property>
 
-<!--        <mapping class="entity.Employee" />-->
+        <mapping class="entity.Department" />
     </session-factory>
 </hibernate-configuration>
