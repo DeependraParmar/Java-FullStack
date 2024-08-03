@@ -36,6 +36,7 @@ public class Main {
             } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 throw new RuntimeException(e);
             }
+
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
