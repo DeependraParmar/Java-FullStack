@@ -51,5 +51,5 @@ public class Main {
     4. It can also be used to access private data members and methods by changing
         accessibility of the members and then invoking the methods.
     5. Similarly, hibernate sees the annotations and through this, it identifies
-        the primary key, column name, etc and reads all of them via reflections.
+        the primary key, column name, etc. and reads all of them via reflections.
  */
