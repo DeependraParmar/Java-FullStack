@@ -9,7 +9,7 @@
     <form style="font-family: Segoe UI;">
         <h1>User Registration Form</h1>
         <label for="fname">First Name:</label><br>
-        <input type="text" id="fname" name="fname"><br><br>
+        <input type="text" id="fname" name="fname" required><br><br>
 
         <label for="lname">Last Name:</label><br>
         <input type="text" id="lname" name="lname"><br><br>
@@ -18,7 +18,7 @@
         <input type="email" id="email" name="email"><br><br>
 
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
+        <input type="password" minlength="8" maxlength="16" id="password" name="password"><br><br>
 
         <label for="gender">Gender: </label>
         <input type="radio" name="gender" value="Male" id="gender">Male
@@ -49,7 +49,6 @@
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Form Submitted');
         let fname = document.querySelector('#fname').value;
         let lname = document.querySelector('#lname').value;
         let email = document.querySelector('#email').value;
@@ -58,11 +57,24 @@
         let dob = document.querySelector('#dob').value;
         let country = document.querySelector('#country').value;
 
+        console.log(fname, lname, email, password, gender, dob, country);
+
         if (fname === '' || lname === '' || email === '' || password === '' || gender === '' || dob === '' || country === '') {
+            alert('Please enter all the fields');
             message.innerHTML = 'Please fill all the fields';
         } else {
             message.innerHTML = `First Name: ${fname}<br>Last Name: ${lname}<br>Email: ${email}<br>Password: ${password} <br>Gender: ${gender} <br>Date of Birth: ${dob} <br>Country: ${country}`;
+            alert('Form Submitted');
         }
     });
 </script>
 </html>
+
+<!--
+    Input Validation:
+        1. Required: The required attribute is a boolean attribute. When present, it specifies that an input field must be filled out before submitting the form.
+        2. Email: The email input type is used for input fields that should contain an e-mail address.
+        3. Number: The number input type is used for input fields that should contain a numeric value.
+        4. Length: The minlength and maxlength attributes are used to specify the minimum and maximum length of the input field.
+        5. Range: The min and max attributes are used to specify the minimum and maximum values for an input field number.
+-->
