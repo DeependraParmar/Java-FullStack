@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tags and more</title>
+</head>
+<body>
+    <img src="https://content.jdmagicbox.com/comp/bhopal/68/0755p755std90468/catalogue/acropolis-institute-of-technology-and-research-campus-ratibad-bhopal-engineering-colleges-3dmql4g.jpg"
+        alt="image here">
+</body>
+<script>
+    let image = document.querySelector('img');
+    image.setAttribute('draggable', false);
+
+    image.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        alert("Right Click Disabled");
+    });
+</script>
+</html>
