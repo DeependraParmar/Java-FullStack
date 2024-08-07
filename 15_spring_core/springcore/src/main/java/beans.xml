@@ -11,5 +11,11 @@
         <constructor-arg name="title" value="Indore" />
         <constructor-arg name="value" value="245.25" />
     </bean>
+    
+    <bean class="com.example.spdemo1.ABC" id="a2">
+    	<property name="num" value="12" />
+    	<property name="title" value="Dewas"></property>
+    	<property name="value" value="23.232"></property>
+    </bean>
 
 </beans>
