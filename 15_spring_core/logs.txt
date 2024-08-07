@@ -1,0 +1,25 @@
+Spring in Java is a framework that provides comprehensive infrastructure support for developing Java applications. Spring handles the infrastructure so you can focus on your application.
+
+Dependency: Dependency is a situation in which one class depends on another class. It is a relationship between two classes where one class uses the functionality of another class.
+
+Dependency Injection in Spring: Dependency Injection is a design pattern that removes the dependency of the programming code. It is a technique to achieve Inversion of Control (IoC) between classes and their dependencies.
+
+Types of Dependency Injection in Spring: There are two types of Dependency Injection in Spring: Constructor-based Dependency Injection and Setter-based Dependency Injection.
+
+Constructor-based Dependency Injection: In Constructor-based Dependency Injection, the dependencies are provided through the class constructor. It is done by passing the dependencies as arguments to the constructor.
+
+Setter-based Dependency Injection: In Setter-based Dependency Injection, the dependencies are provided through setter methods. It is done by calling setter methods on the object after the object is created.
+
+Advantages of Dependency Injection in Spring: Dependency Injection in Spring has several advantages. It makes the code more modular, easier to test, and easier to maintain. It also reduces the coupling between classes and makes the code more flexible.
+
+
+_____________________________________________________________________________________________________
+
+
+
+IOC: Inversion of Control is a design principle in which the control of object creation and lifecycle is transferred to a container or framework. In the context of Spring, IOC is achieved through Automatic Dependency Injection.
+
+IOC Container: An IOC Container is a framework that manages the creation and lifecycle of objects. In Spring, the IOC Container is responsible for instantiating, configuring, and assembling objects.
+
+Bean: A Bean is an object that is managed by the IOC Container. In Spring, beans are defined in the configuration file and are created and managed by the IOC Container.
+
