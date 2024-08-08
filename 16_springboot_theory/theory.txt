@@ -18,3 +18,11 @@ Controller: Request & Response Handler
 
 Request >>> Controller >>> Service >>> Model >>> Service >>> Controller >>> Response(view)
 
+______________________________________________________________________________________________________
+
+
+Spring Boot's MVC Architecture: 
+
+    Controllers: Request & Response Handler
+    Services: Business Logics
+    Repositories: Database Connection, CRUD Operations
