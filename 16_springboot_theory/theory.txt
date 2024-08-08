@@ -1,0 +1,20 @@
+MVC Architecture 1.0: 
+
+Model: Database / Business Logics
+View: UI Layer / Presentation Layer
+Controller: Request & Response Handler
+
+Request >>> Controller >>> Model >>> Controller >>> Response(view)
+
+
+MVC Architecture 2.0:
+
+Model:
+        Database Layer: Database Connection, CRUD Operations
+        Service Layer: Business Logics
+
+View: UI Layer / Presentation Layer
+Controller: Request & Response Handler
+
+Request >>> Controller >>> Service >>> Model >>> Service >>> Controller >>> Response(view)
+

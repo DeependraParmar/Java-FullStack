@@ -5,6 +5,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
+    <context:annotation-config/>
+    
     <!-- Constructor Injection -->
     <bean class="com.example.spdemo1.ABC" id="a1">
         <constructor-arg name="num" value="45" />
@@ -17,5 +19,28 @@
     	<property name="title" value="Dewas"></property>
     	<property name="value" value="23.232"></property>
     </bean>
+    
+    <bean class="com.example.spdemo1.XYZ" id="x1">
+    	<property name="message" value="Good Morning"></property>
+    	<property name="ob" ref="a1"></property>
+    </bean>
+    
+    <bean class="com.example.spdemo1.PQR" id="p1" autowire="byType">
+    	<property name="data" value="20"></property>
+    </bean>
+    
+    <bean class="com.example.spdemo1.PQR" id="p2" autowire="byType">
+    	<constructor-arg name="data" value="100"></constructor-arg>
+    </bean>
+    
+    <bean class="com.example.spdemo1.ASD" id="as1">
+    	<property name="name" value="hello"></property>
+    </bean>
+    
+    <bean class="com.example.spdemo1.DEF" id="d1">
+    	<property name="name" value="Acropolis"></property>
+    </bean>
+    
+    
 
 </beans>
