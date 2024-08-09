@@ -20,8 +20,10 @@ public class EmpController {
     private EmployeeRepo employeeRepo;
 
     @GetMapping("/list")
-    public List<Employee> list() {
-        return (List<Employee>) employeeRepo.findAll();
+    public ApiResponse list() {
+        List<Employee> data = employeeRepo.findAll();
+        return new ApiResponse(true, data, "Employee Records");
     }
+    
     
 }
