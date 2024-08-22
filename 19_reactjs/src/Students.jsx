@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Students = () => {
     const [students, setStudents] = useState([
@@ -37,27 +37,30 @@ const Students = () => {
         }
     ]);
 
+    const roll = useRef();
+    const name = useRef();
+    const age = useRef();
+    const branch = useRef();
+    const maths = useRef();
+    const english = useRef();
+    const science = useRef();
+
     const addStudent = (event) => {
         event.preventDefault();
-        const roll = document.querySelector('input[placeholder="Roll No"]').value;
-        const name = document.querySelector('input[placeholder="Name"]').value;
-        const age = document.querySelector('input[placeholder="Age"]').value;
-        const branch = document.querySelector('select').value;
-        const maths = document.querySelector('input[placeholder="Maths"]').value;
-        const english = document.querySelector('input[placeholder="English"]').value;
-        const science = document.querySelector('input[placeholder="Science"]').value;
 
         const newStudent = {
-            roll: roll,
-            name: name,
-            age: age,
-            branch: branch,
+            roll: roll.current.value,
+            name: name.current.value,
+            age: age.current.value,
+            branch: branch.current.value,
             marks: {
-                maths: Number(maths),
-                english: Number(english),
-                science: Number(science)
+                maths: Number(maths.current.value),
+                english: Number(english.current.value),
+                science: Number(science.current.value)
             }
         }
+
+        console.log(newStudent);
 
         setStudents([...students, newStudent]);
         alert('Student Added Successfully');
@@ -68,34 +71,34 @@ const Students = () => {
     return (
         <>
             <form onSubmit={e => addStudent(e)}>
-                <div className='row mx-4 my-4'>
+                <div className='row mx-4 my-4 gap-0'>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="text" className='form-control' title='Roll Number' placeholder='Roll No' required />
+                        <input ref={roll} type="text" className='form-control' title='Roll Number' placeholder='Roll No' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="text" className='form-control' title='Name' placeholder='Name' required />
+                        <input ref={name} type="text" className='form-control' title='Name' placeholder='Name' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="text" className='form-control' title='Age' placeholder='Age' required />
+                        <input ref={age} type="text" className='form-control' title='Age' placeholder='Age' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <select title='Select your branch' className='form-control' required>
+                        <select ref={branch} title='Select your branch' className='form-control' required>
                             <option value="">Select Branch</option>
                             {
-                                branches.map(branch => {
-                                    return <option value={branch}>{branch}</option>
+                                branches.map((branch, index) => {
+                                    return <option key={index} value={branch}>{branch}</option>
                                 })
                             }
                         </select>
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="number" title='Mathematics Marks' min='0' max='100' className='form-control' placeholder='Maths' required />
+                        <input ref={maths} type="number" title='Mathematics Marks' min='0' max='100' className='form-control' placeholder='Maths' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="number" title='English Marks' min='0' max='100' className='form-control' placeholder='English' required />
+                        <input ref={english} type="number" title='English Marks' min='0' max='100' className='form-control' placeholder='English' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
-                        <input type="number" title='Science Marks' min='0' max='100' className='form-control' placeholder='Science' required />
+                        <input ref={science} type="number" title='Science Marks' min='0' max='100' className='form-control' placeholder='Science' required />
                     </div>
                     <div className="col-xl-4 col-lg-4">
                         <button type="submit" min='0' max='100' className='btn btn-success'>Add Student</button>
