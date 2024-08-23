@@ -1,10 +1,18 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Header from "../components/Header";
+import Products from "./Products";
 import Students from "./Students";
-import "./index.css"
+import "./index.css";
 
 function App(){
   return <>
-    <h1 className="m-4 alert-success text-center">Student Records</h1>
-    <Students />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Students />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+    </Router>
   </>
 }
 export default App;
