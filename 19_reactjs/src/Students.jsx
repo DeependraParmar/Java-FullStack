@@ -1,41 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
+import {studentsData} from "../data.js"
 
 const Students = () => {
-    const [students, setStudents] = useState([
-        {
-            roll: 101,
-            name: "Vikas",
-            age: 20,
-            branch: "CSIT",
-            marks: {
-                maths: 90,
-                english: 80,
-                science: 70
-            }
-        },
-        {
-            roll: 102,
-            name: "Rahul",
-            age: 21,
-            branch: "CS",
-            marks: {
-                maths: 70,
-                english: 80,
-                science: 90,
-            },
-        },
-        {
-            roll: 103,
-            name: "Rohit",
-            age: 22,
-            branch: "IT",
-            marks: {
-                maths: 80,
-                english: 70,
-                science: 60
-            }
-        }
-    ]);
+    const [students, setStudents] = useState(studentsData);
 
     const roll = useRef();
     const name = useRef();
@@ -67,6 +34,11 @@ const Students = () => {
     }
 
     const branches = ['CS', 'IT', 'CSIT', 'ME', 'CE']
+
+    const deleteStudent = (roll) => {
+        const status = window.confirm("Do you want to delete?");
+        status ? setStudents(students.filter(student => student.roll != roll)) : null;
+    }
 
     return (
         <>
@@ -121,6 +93,7 @@ const Students = () => {
                         <th>English</th>
                         <th>Science</th>
                         <th>Result</th>
+                        <th>Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -135,6 +108,7 @@ const Students = () => {
                                 <td>{student.marks.english}</td>
                                 <td>{student.marks.science}</td>
                                 <td>{student.marks.maths + student.marks.english + student.marks.science} / 300</td>
+                                <td><button onClick={() => deleteStudent(student.roll)} className="btn btn-danger">Delete</button></td>
                             </tr>
                         ))
                     }
@@ -144,4 +118,4 @@ const Students = () => {
     )
 }
 
-export default Students
+export default Students;
