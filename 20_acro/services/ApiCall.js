@@ -1,15 +1,17 @@
 class ApiCall{
     postCall(URL, data){
-        fetch(URL, {
+        return fetch(URL, {
             method: "POST",
             headers: {
-                type: ""
-            }
-        })
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(data => data.json())
     }
 }
 
 export default new ApiCall();
+
 const baseurl = "http://localhost:8080"
 
 export const urls = {

@@ -1,6 +1,7 @@
 import { Button, HStack, Heading, Input, InputGroup, Select, VStack } from '@chakra-ui/react'
 import React, { useRef, useState } from 'react'
 import ApiCall, { urls } from '../services/ApiCall';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const [type, setType] = useState("student");
@@ -48,7 +49,16 @@ const StudentRegister = () => {
             password: password.current.value
         }
 
-        ApiCall.postCall(urls.STUDENT_REG, data);
+        ApiCall.postCall(urls.STUDENT_REG, data).then(response => {
+            console.log(response)
+            if(response.status){
+                event.target.reset();
+                toast.success(response.message);
+            }
+            else{
+                toast.error(response.message);
+            }
+        });
     }
 
     return <>
@@ -93,7 +103,7 @@ const StudentRegister = () => {
                     <input style={{ accentColor: 'red' }} type="checkbox" name="" id="showpassword" />
                     <label style={{ marginLeft: '10px', fontSize: '0.9rem' }} htmlFor="showpassword">Show Password</label>
                 </InputGroup>
-                <Button colorScheme='red' width={'full'}>Register</Button>
+                <Button type='submit' colorScheme='red' width={'full'}>Register</Button>
             </VStack>
         </form>
     </>

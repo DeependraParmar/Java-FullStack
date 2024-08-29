@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import ErrorBoundary from './ErrorBoundary';
+import { Toaster } from 'react-hot-toast';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Login = React.lazy(() => import('../pages/Login'));
@@ -24,6 +25,10 @@ const App = () => {
               <Route path="/student/home" element={<StudentHome />}  />
               <Route path="/faculty/home" element={<FacultyHome />}  />
             </Routes>
+            <Toaster
+              position="top-right"
+              reverseOrder={false}
+            />
           </Suspense>
         </Router>
       </ErrorBoundary>
