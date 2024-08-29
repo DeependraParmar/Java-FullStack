@@ -1,6 +1,11 @@
 class ApiCall{
     postCall(URL, data){
-
+        fetch(URL, {
+            method: "POST",
+            headers: {
+                type: ""
+            }
+        })
     }
 }
 
