@@ -1,6 +1,7 @@
-import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, HStack, Image, Menu, MenuDivider, MenuGroup, MenuItem, useDisclosure } from '@chakra-ui/react';
+import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, HStack, Image, Menu, MenuDivider, MenuGroup, MenuItem, Tooltip, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
-import { IoBookOutline, IoHomeOutline, IoMenu } from 'react-icons/io5';
+import { IoMenu, IoPersonAdd } from 'react-icons/io5';
+import { MdLogin } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -10,10 +11,14 @@ const Header = () => {
     <>
       <HStack alignItems={'center'} justifyContent={'space-between'} px={4} py={2} boxShadow={'md'}>
         <Image w={'48'} src='https://aiper.ac.in/wp-content/uploads/2023/03/AITR-logo.jpg' />
-        <Button colorScheme='blue' onClick={onOpen}><IoMenu size={18} /> </Button>
+        <Tooltip label="Menu">
+          <Button colorScheme='red' rounded={'full'} onClick={onOpen}><IoMenu size={18} /> </Button>
+
+        </Tooltip>
       </HStack>
 
       <Drawer placement={'left'} isOpen={isOpen} onClose={onClose}>
+        <DrawerOverlay backdropFilter={'blur(5px)'} />
         <DrawerContent>
           <DrawerHeader>
             <Image w={'48'} src='https://aiper.ac.in/wp-content/uploads/2023/03/AITR-logo.jpg' />
@@ -30,7 +35,8 @@ const Header = () => {
               </MenuGroup>
             </Menu>
             <HStack>
-              <Button colorScheme={'blue'} size={'sm'}>Login</Button>
+              <Link onClick={() => onClose()} to={'/register'}><Button colorScheme={'red'} size={'sm'} gap={1}>Register <IoPersonAdd size={12} /> </Button></Link>
+              <Link onClick={() => onClose()} to={'/login'}><Button variant={'outline'} colorScheme={'red'} size={'sm'} gap={1}>Login <MdLogin /></Button></Link>
             </HStack>
           </DrawerBody>
         </DrawerContent>
