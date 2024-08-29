@@ -109,29 +109,59 @@ const StudentRegister = () => {
     </>
 }
 const FacultyRegister = () => {
+    
+    const name = useRef();
+    const phone = useRef();
+    const id = useRef();
+    const email = useRef();
+    const password = useRef();
+
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const data = {
+            name: name.current.value,
+            fac_id: id.current.value * 1,
+            phone: phone.current.value * 1,
+            email: email.current.value,
+            password: password.current.value
+        }
+
+        ApiCall.postCall(urls.FACULTY_REG, data).then(response => {
+            console.log(response)
+            if (response.status) {
+                event.target.reset();
+                toast.success(response.message);
+            }
+            else {
+                toast.error(response.message);
+            }
+        });
+    }
+
     return <>
-        <form style={{ width: '100%' }} >
+        <form onSubmit={e => onSubmitHandler(e)} style={{ width: '100%' }} >
             <VStack gap={4} margin={'auto'} alignItems={'center'} justifyContent={'center'} width={'40%'}>
                 <InputGroup>
-                    <Input type='text' fontSize={'sm'} required placeholder='Faculty Name' />
+                    <Input ref={name} type='text' fontSize={'sm'} required placeholder='Faculty Name' />
                 </InputGroup>
                 <InputGroup>
-                    <Input type='text' fontSize={'sm'} required placeholder='Faculty ID' />
+                    <Input ref={id} type='number' fontSize={'sm'} required placeholder='Faculty ID' />
                 </InputGroup>
                 <InputGroup>
-                    <Input type='number' minLength={10} maxLength={10} fontSize={'sm'} required placeholder="Phone Number" />
+                    <Input ref={phone} type='number' minLength={10} maxLength={10} fontSize={'sm'} required placeholder="Phone Number" />
                 </InputGroup>
                 <InputGroup>
-                    <Input type='email' fontSize={'sm'} required placeholder="Student Email" />
+                    <Input ref={email} type='email' fontSize={'sm'} required placeholder="Faculty Email" />
                 </InputGroup>
                 <InputGroup>
-                    <Input type='password' fontSize={'sm'} required placeholder='**********' />
+                    <Input ref={password} type='password' fontSize={'sm'} required placeholder='**********' />
                 </InputGroup>
                 <InputGroup textAlign={'center'}>
                     <input style={{ accentColor: 'red' }} type="checkbox" name="" id="showpassword" />
                     <label style={{ marginLeft: '10px', fontSize: '0.9rem' }} htmlFor="showpassword">Show Password</label>
                 </InputGroup>
-                <Button colorScheme='red' width={'full'}>Register</Button>
+                <Button type='submit' colorScheme='red' width={'full'}>Register</Button>
             </VStack>
 
         </form>
