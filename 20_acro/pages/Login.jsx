@@ -1,18 +1,42 @@
 import { Button, Heading, Input, InputGroup, VStack } from '@chakra-ui/react'
-import React from 'react'
+import React, { useRef } from 'react'
+import ApiCall, { urls } from '../services/ApiCall';
 
 const Login = () => {
+  const email = useRef();
+  const password = useRef();
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const data = {
+      email: email.current.value,
+      password: password.current.value
+    }
+
+    ApiCall.postCall(urls.LOGIN, data).then(response => {
+      console.log(response)
+      if (response.status) {
+        event.target.reset();
+        toast.success(response.message);
+      }
+      else {
+        toast.error(response.message);
+      }
+    });
+  }
+
   return (
     <>
       <VStack py={6}  alignItems={'center'} justifyContent={'center'} spacing={4} width={'90%'} margin={'auto'}>
         <Heading>Login Form</Heading>
-        <form style={{width: '100%'}} >
+        <form onSubmit={e => onSubmitHandler(e)} style={{width: '100%'}} >
           <VStack gap={4} margin={'auto'} alignItems={'center'} justifyContent={'center'}  width={'40%'}>
             <InputGroup>
-              <Input type='email' fontSize={'sm'} required placeholder='hey@gmail.com' />
+              <Input ref={email} type='email' fontSize={'sm'} required placeholder='hey@gmail.com' />
             </InputGroup>
             <InputGroup>
-              <Input type='password' fontSize={'sm'} required placeholder='**********' />
+              <Input ref={password} type='password' fontSize={'sm'} required placeholder='**********' />
             </InputGroup>
             <InputGroup textAlign={'center'}>
               <input style={{accentColor: 'red'}} type="checkbox" name="" id="showpassword" />
