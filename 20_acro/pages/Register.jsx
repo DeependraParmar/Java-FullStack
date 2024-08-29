@@ -1,5 +1,6 @@
 import { Button, HStack, Heading, Input, InputGroup, Select, VStack } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import ApiCall, { urls } from '../services/ApiCall';
 
 const Register = () => {
     const [type, setType] = useState("student");
@@ -28,26 +29,49 @@ const Register = () => {
 }
 
 const StudentRegister = () => {
+    const name = useRef();
+    const branch = useRef();
+    const enrollNumber = useRef();
+    const semester = useRef();
+    const email = useRef();
+    const password = useRef();
+
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const data = {
+            name: name.current.value,
+            branch: branch.current.value,
+            enrollNumber: enrollNumber.current.value,
+            semester: semester.current.value * 1,
+            email: email.current.value,
+            password: password.current.value
+        }
+
+        ApiCall.postCall(urls.STUDENT_REG, data);
+    }
+
     return <>
-        <form style={{ width: '100%' }} >
+        <form onSubmit={e => onSubmitHandler(e)} style={{ width: '100%' }} >
             <VStack gap={4} margin={'auto'} alignItems={'center'} justifyContent={'center'} width={'40%'}>
                 <InputGroup>
-                    <Input type='text' fontSize={'sm'} required placeholder='Student Name' />
+                    <Input ref={name} type='text' fontSize={'sm'} required placeholder='Student Name' />
                 </InputGroup>
                 <InputGroup>
-                    <Select fontSize={'sm'}>
+                    <Select ref={branch} fontSize={'sm'}>
                         <option value="">Choose branch</option>
                         <option value="CS">CS</option>
                         <option value="IT">IT</option>
                         <option value="CSIT">CSIT</option>
                         <option value="ME">ME</option>
+                        <option value="CE">CE</option>
                     </Select>
                 </InputGroup>
                 <InputGroup>
-                    <Input type='text' fontSize={'sm'} required placeholder="Enrollment Number" />
+                    <Input ref={enrollNumber} type='text' fontSize={'sm'} required placeholder="Enrollment Number" />
                 </InputGroup>
                 <InputGroup>
-                    <Select fontSize={'sm'}>
+                    <Select ref={semester} fontSize={'sm'}>
                         <option value="">Choose semster</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -60,10 +84,10 @@ const StudentRegister = () => {
                     </Select>
                 </InputGroup>
                 <InputGroup>
-                    <Input type='email' fontSize={'sm'} required placeholder="Student Email" />
+                    <Input ref={email} type='email' fontSize={'sm'} required placeholder="Student Email" />
                 </InputGroup>
                 <InputGroup>
-                    <Input type='password' fontSize={'sm'} required placeholder='**********' />
+                    <Input ref={password} type='password' fontSize={'sm'} required placeholder='**********' />
                 </InputGroup>
                 <InputGroup textAlign={'center'}>
                     <input style={{ accentColor: 'red' }} type="checkbox" name="" id="showpassword" />
