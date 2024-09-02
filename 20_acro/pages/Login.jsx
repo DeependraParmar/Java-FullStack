@@ -1,10 +1,13 @@
 import { Button, Heading, Input, InputGroup, VStack } from '@chakra-ui/react'
 import React, { useRef } from 'react'
 import ApiCall, { urls } from '../services/ApiCall';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const email = useRef();
   const password = useRef();
+  const navigate = useNavigate();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -19,6 +22,7 @@ const Login = () => {
       if (response.status) {
         event.target.reset();
         toast.success(response.message);
+        navigate(`/${response.data.role}/home`)
       }
       else {
         toast.error(response.message);
